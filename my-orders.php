@@ -108,9 +108,7 @@ include 'includes/header.php';
                     $order_subtotal += $row['price'] * $row['quantity'];
                 }
             }
-            $order_cgst = $order_subtotal * 0.09;
-            $order_sgst = $order_subtotal * 0.09;
-            $order_total_with_gst = $order_subtotal + $order_cgst + $order_sgst;
+            $order_total_with_gst = $order_subtotal;
         ?>
         <div class="accordion-item border-0 mb-3 rounded shadow-sm">
             <h2 class="accordion-header" id="heading<?php echo $order['id']; ?>">
@@ -209,14 +207,6 @@ include 'includes/header.php';
                             <tr>
                                 <td colspan="3" class="text-end">Subtotal</td>
                                 <td class="text-end">&#8377;<?php echo number_format($order_subtotal, 2); ?></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" class="text-end">CGST (9%)</td>
-                                <td class="text-end">&#8377;<?php echo number_format($order_cgst, 2); ?></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" class="text-end">SGST (9%)</td>
-                                <td class="text-end">&#8377;<?php echo number_format($order_sgst, 2); ?></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end text-uppercase">Grand Total</td>
