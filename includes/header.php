@@ -39,7 +39,7 @@
         }
     </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <?php
 $user_photo = null;
 if (isset($_SESSION['user_id'])) {
@@ -113,4 +113,4 @@ if (isset($_SESSION['user_id'])) {
             </div>
         </div>
     </nav>
-    <div class="container pb-5">
+    <div class="container pb-5 flex-grow-1">
