@@ -76,11 +76,14 @@ include 'includes/sidebar.php';
                                 <form method="POST" class="d-flex">
                                     <input type="hidden" name="order_id" value="<?php echo $row['id']; ?>">
                                     <select name="status" class="form-select form-select-sm me-2">
-                                        <option value="Pending">Pending</option>
-                                        <option value="Processing">Processing</option>
-                                        <option value="Shipped">Shipped</option>
-                                        <option value="Delivered">Delivered</option>
-                                        <option value="Cancelled">Cancelled</option>
+                                        <?php 
+                                            $all_statuses = ['Pending','Processing','Shipped','Delivered','Cancelled'];
+                                            foreach($all_statuses as $opt):
+                                        ?>
+                                            <option value="<?php echo $opt; ?>" <?php echo ($row['status']===$opt)?'selected':''; ?>>
+                                                <?php echo $opt; ?>
+                                            </option>
+                                        <?php endforeach; ?>
                                     </select>
                                     <button type="submit" name="update_status" class="btn btn-sm btn-info">Update</button>
                                 </form>

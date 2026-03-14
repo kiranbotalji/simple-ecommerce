@@ -10,6 +10,13 @@ Lightweight storefront and admin built with core PHP, MySQLi, and Bootstrap 5. N
 - PHP 7.4+ (core, no framework)
 - MySQL/MariaDB via MySQLi
 - Bootstrap 5, Bootstrap Icons
+- HTML5 + CSS3
+
+## Where features live
+- Sessions: login state (users/admin) and cart contents (`includes/db.php` starts sessions; `cart.php` uses session cart).
+- Cookies: remember-me for user login (`login.php` sets/clears `remember_user`).
+- File uploads: product/user photos saved to `uploads/` (admin add/edit product, profile photo).
+- (No caching layer): product listings read fresh data each time.
 
 ## Getting started (local)
 1) Copy `simple-ecommerce` into your web root  
@@ -30,9 +37,11 @@ Lightweight storefront and admin built with core PHP, MySQLi, and Bootstrap 5. N
 ![Home](docs/screenshots/home.png)
 ![Product](docs/screenshots/product.png)
 ![Cart](docs/screenshots/Cart.png)
+![My Orders](docs/screenshots/my-orders.png)
 ![Admin Dashboard](docs/screenshots/admin_dashboard.png)
 ![Manage Categories](docs/screenshots/manage-categories.png)
 ![Manage Products](docs/screenshots/manage-products.png)
+![Manage Orders](docs/screenshots/manage-orders.png)
 
 ## Demo
 - `docs/demo.gif`
@@ -46,5 +55,5 @@ Lightweight storefront and admin built with core PHP, MySQLi, and Bootstrap 5. N
 ## Showcase checklist
 - [x] Add screenshots (public + admin)
 - [ ] Add short demo GIF
-- [x] Add license (MIT)
+- [x] Add license (MIT -> Educational Use License)
 - [x] Change default admin password in seed (now `changeme123`; reset in production)
