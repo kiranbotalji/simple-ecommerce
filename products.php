@@ -41,8 +41,13 @@ include 'includes/header.php';
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100 product-card shadow-sm border-0">
                     <div class="ratio ratio-4x3 bg-light rounded-top overflow-hidden">
-                        <?php $img_file = !empty($p['image']) ? $p['image'] : 'placeholder-product.svg'; ?>
-                        <?php $imgSrc = 'uploads/' . rawurlencode($img_file); ?>
+                        <?php 
+                            $img_file = !empty($p['image']) ? $p['image'] : 'placeholder-product.svg';
+                            if (!file_exists(__DIR__ . '/uploads/' . $img_file)) {
+                                $img_file = 'placeholder-product.svg';
+                            }
+                            $imgSrc = 'uploads/' . rawurlencode($img_file); 
+                        ?>
                         <img src="<?php echo $imgSrc; ?>" class="w-100 h-100" alt="<?php echo htmlspecialchars($p['name']); ?>" style="object-fit: contain; padding: 8px;">
                     </div>
                     <div class="card-body">

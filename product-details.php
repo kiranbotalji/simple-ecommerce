@@ -1,5 +1,5 @@
 ﻿<?php
-// File: product-details.php � main logic for product-details page.
+// File: product-details.php ? main logic for product-details page.
 require_once 'includes/db.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
@@ -53,6 +53,9 @@ include 'includes/header.php';
     <div class="col-md-6 mb-4 d-flex justify-content-center">
         <?php 
             $img_file = !empty($product['image']) ? $product['image'] : 'placeholder-product.svg';
+            if (!file_exists(__DIR__ . '/uploads/' . $img_file)) {
+                $img_file = 'placeholder-product.svg';
+            }
             $imgSrc = 'uploads/' . rawurlencode($img_file);
         ?>
         <div class="ratio rounded shadow overflow-hidden bg-light" style="--bs-aspect-ratio: 75%; width: min(100%, 420px);">
@@ -60,10 +63,10 @@ include 'includes/header.php';
         </div>
     </div>
     <div class="col-md-6">
-        <h2 class="mb-3"><?php echo $product['name']; ?></h2>
-        <h6 class="text-muted mb-4">Category: <?php echo $product['category_name']; ?></h6>
-        <h3 class="text-primary mb-1">₹<?php echo number_format($product['price'], 2); ?></h3>
-        <div class="text-muted mb-3 small">Price excludes GST. CGST 9% + SGST 9% (total 18%) added at checkout.</div>
+        <h2 class="mb-3"><?php echo htmlspecialchars($product['name']); ?></h2>
+        <h6 class="text-muted mb-4">Category: <?php echo htmlspecialchars($product['category_name']); ?></h6>
+        <h3 class="text-primary mb-1">&#8377;<?php echo number_format($product['price'], 2); ?></h3>
+        <div class="text-muted mb-3 small"></div>
         
         <p class="mb-4"><?php echo nl2br($product['description']); ?></p>
         
@@ -112,3 +115,4 @@ include 'includes/header.php';
 </div>
 
 <?php include 'includes/footer.php'; ?>
+
