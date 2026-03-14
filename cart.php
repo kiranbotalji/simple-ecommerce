@@ -1,5 +1,5 @@
-<?php
-// File: cart.php � main logic for cart page.
+﻿<?php
+// File: cart.php � main logic for cart page.
 require_once 'includes/db.php';
 
 // Handle Item Removal
@@ -73,7 +73,7 @@ $total_price = 0;
                                     <a href="product-details.php?id=<?php echo $p['id']; ?>" class="text-decoration-none text-dark fw-bold"><?php echo $p['name']; ?></a>
                                 </div>
                             </td>
-                            <td>₹<?php echo number_format($p['price'], 2); ?></td>
+                            <td>&#8377;<?php echo number_format($p['price'], 2); ?></td>
                             <td style="width: 150px;">
                                 <input type="number"
                                     name="quantities[<?php echo $id; ?>]"
@@ -86,7 +86,7 @@ $total_price = 0;
                                     oninput="this.value = Math.min(Math.max(1, parseInt(this.value)||1), parseInt(this.dataset.stock));">
                                 <small class="text-muted d-block mt-1">Max: <?php echo $p['stock']; ?></small>
                             </td>
-                            <td>₹<?php echo number_format($subtotal, 2); ?></td>
+                            <td>&#8377;<?php echo number_format($subtotal, 2); ?></td>
                             <td class="text-center">
                                 <a href="cart.php?remove=<?php echo $id; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Remove item?')">&times; Remove</a>
                             </td>
@@ -104,7 +104,7 @@ $total_price = 0;
             </div>
             <div class="col-md-6 text-end">
                 <div class="p-3 bg-light rounded shadow-sm border">
-                    <h4>Grand Total: <span class="text-primary">₹<?php echo number_format($total_price, 2); ?></span></h4>
+                    <h4>Grand Total: <span class="text-primary">&#8377;<?php echo number_format($total_price, 2); ?></span></h4>
                     <hr>
                     <a href="checkout.php" class="btn btn-success btn-lg px-5 mt-2">Proceed to Checkout</a>
                 </div>
@@ -114,3 +114,4 @@ $total_price = 0;
 <?php endif; ?>
 
 <?php include 'includes/footer.php'; ?>
+

@@ -1,5 +1,5 @@
-<?php
-// File: index.php � main logic for index page.
+﻿<?php
+// File: index.php � main logic for index page.
 require_once 'includes/db.php';
 
 $products = [];
@@ -82,7 +82,7 @@ include 'includes/header.php';
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-truncate"><?php echo $p['name']; ?></h5>
-                            <p class="text-primary fw-bold">₹<?php echo number_format($p['price'], 2); ?></p>
+                            <p class="text-primary fw-bold">&#8377;<?php echo number_format($p['price'], 2); ?></p>
                             <p class="card-text text-muted small text-truncate"><?php echo $p['description']; ?></p>
                         </div>
                         <div class="card-footer bg-white border-0 d-grid pb-3">
@@ -97,3 +97,4 @@ include 'includes/header.php';
 </div>
 
 <?php include 'includes/footer.php'; ?>
+

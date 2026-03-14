@@ -1,5 +1,5 @@
-<?php
-// File: manage-products.php � main logic for manage-products page.
+﻿<?php
+// File: manage-products.php � main logic for manage-products page.
 require_once 'auth_check.php';
 require_once '../includes/db.php';
 
@@ -73,7 +73,7 @@ include 'includes/sidebar.php';
                                 </td>
                                 <td><?php echo $row['name']; ?></td>
                                 <td><?php echo $row['category_name']; ?></td>
-                                <td>₹<?php echo number_format($row['price'], 2); ?></td>
+                                <td>&#8377;<?php echo number_format($row['price'], 2); ?></td>
                                 <td><?php echo $row['stock']; ?></td>
                                 <td>
                                     <a href="edit-product.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
@@ -87,3 +87,4 @@ include 'includes/sidebar.php';
             </div>
         </div>
 <?php include 'includes/footer.php'; ?>
+

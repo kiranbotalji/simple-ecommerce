@@ -1,5 +1,5 @@
-<?php
-// File: my-orders.php � main logic for my-orders page.
+﻿<?php
+// File: my-orders.php � main logic for my-orders page.
 require_once 'includes/db.php';
 
 // Must be logged in
@@ -126,7 +126,7 @@ include 'includes/header.php';
                         <span class="text-muted small">
                             <?php echo date('d M Y, h:i A', strtotime($order['created_at'])); ?>
                             &nbsp;|&nbsp;
-                            <strong class="text-dark">₹<?php echo number_format($order_total_with_gst, 2); ?></strong>
+                            <strong class="text-dark">&#8377;<?php echo number_format($order_total_with_gst, 2); ?></strong>
                         </span>
                     </div>
                 </button>
@@ -200,27 +200,27 @@ include 'includes/header.php';
                                     </div>
                                 </td>
                                 <td class="text-center"><?php echo $item['quantity']; ?></td>
-                                <td class="text-end">₹<?php echo number_format($item['price'], 2); ?></td>
-                                <td class="text-end fw-bold">₹<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
+                                <td class="text-end">&#8377;<?php echo number_format($item['price'], 2); ?></td>
+                                <td class="text-end fw-bold">&#8377;<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
                         <tfoot class="table-light fw-bold">
                             <tr>
                                 <td colspan="3" class="text-end">Subtotal</td>
-                                <td class="text-end">₹<?php echo number_format($order_subtotal, 2); ?></td>
+                                <td class="text-end">&#8377;<?php echo number_format($order_subtotal, 2); ?></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end">CGST (9%)</td>
-                                <td class="text-end">₹<?php echo number_format($order_cgst, 2); ?></td>
+                                <td class="text-end">&#8377;<?php echo number_format($order_cgst, 2); ?></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end">SGST (9%)</td>
-                                <td class="text-end">₹<?php echo number_format($order_sgst, 2); ?></td>
+                                <td class="text-end">&#8377;<?php echo number_format($order_sgst, 2); ?></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end text-uppercase">Grand Total</td>
-                                <td class="text-end text-primary">₹<?php echo number_format($order_total_with_gst, 2); ?></td>
+                                <td class="text-end text-primary">&#8377;<?php echo number_format($order_total_with_gst, 2); ?></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -245,3 +245,4 @@ include 'includes/header.php';
 <?php endif; ?>
 
 <?php include 'includes/footer.php'; ?>
+

@@ -1,5 +1,5 @@
-<?php
-// File: checkout.php � main logic for checkout page.
+﻿<?php
+// File: checkout.php � main logic for checkout page.
 require_once 'includes/db.php';
 
 // Redirect to login if not logged in
@@ -106,26 +106,26 @@ include 'includes/header.php';
                             ?>
                             <tr>
                                 <td><?php echo $p['name']; ?> (x<?php echo $item['qty']; ?>)</td>
-                                <td class="text-end">₹<?php echo number_format($item['price'] * $item['qty'], 2); ?></td>
+                                <td class="text-end">&#8377;<?php echo number_format($item['price'] * $item['qty'], 2); ?></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
                         <tfoot class="table-light fw-bold">
                             <tr>
                                 <td>Subtotal</td>
-                                <td class="text-end">₹<?php echo number_format($subtotal, 2); ?></td>
+                                <td class="text-end">&#8377;<?php echo number_format($subtotal, 2); ?></td>
                             </tr>
                             <tr>
                                 <td>CGST (9%)</td>
-                                <td class="text-end">₹<?php echo number_format($cgst, 2); ?></td>
+                                <td class="text-end">&#8377;<?php echo number_format($cgst, 2); ?></td>
                             </tr>
                             <tr>
                                 <td>SGST (9%)</td>
-                                <td class="text-end">₹<?php echo number_format($sgst, 2); ?></td>
+                                <td class="text-end">&#8377;<?php echo number_format($sgst, 2); ?></td>
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Grand Total</td>
-                                <td class="text-end text-primary fs-5">₹<?php echo number_format($grand_total, 2); ?></td>
+                                <td class="text-end text-primary fs-5">&#8377;<?php echo number_format($grand_total, 2); ?></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -136,7 +136,7 @@ include 'includes/header.php';
 
                     <form method="POST">
                         <div class="d-grid mt-4">
-                            <button type="submit" name="place_order" class="btn btn-success btn-lg">Place Order (₹<?php echo number_format($grand_total, 2); ?>)</button>
+                            <button type="submit" name="place_order" class="btn btn-success btn-lg">Place Order (&#8377;<?php echo number_format($grand_total, 2); ?>)</button>
                         </div>
                     </form>
                 </div>
@@ -149,3 +149,4 @@ include 'includes/header.php';
 </div>
 
 <?php include 'includes/footer.php'; ?>
+
