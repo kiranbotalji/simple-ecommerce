@@ -29,9 +29,10 @@ Lightweight storefront and admin built with core PHP, MySQLi, and Bootstrap 5. N
 ## Screenshots
 - `docs/screenshots/home.png`
 - `docs/screenshots/product.png`
-- `docs/screenshots/cart.png`
-- `docs/screenshots/admin-dashboard.png`
-- `docs/screenshots/admin-edit.png`
+- `docs/screenshots/Cart.png`
+- `docs/screenshots/admin_dashboard.png`
+- `docs/screenshots/manage-categories.png`
+- `docs/screenshots/manage-products.png`
 
 ## Demo
 - `docs/demo.gif`
