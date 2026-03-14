@@ -10,8 +10,15 @@ if(isset($_POST['update_status'])) {
     $conn->query("UPDATE orders SET status = '$status' WHERE id = $order_id");
 }
 
+$status_filter = isset($_GET['status']) ? $conn->real_escape_string($_GET['status']) : '';
+$status_where = '';
+if ($status_filter && $status_filter !== 'All') {
+    $status_where = "WHERE o.status = '$status_filter'";
+}
+
 $orders = $conn->query("SELECT o.*, u.username FROM orders o 
                         LEFT JOIN users u ON o.user_id = u.id 
+                        $status_where
                         ORDER BY o.created_at DESC");
 ?>
 <?php
@@ -20,7 +27,21 @@ include 'includes/header.php';
 include 'includes/sidebar.php';
 ?>
         <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Manage Orders</h1>
+            <h1 class="h2 mb-0">Manage Orders</h1>
+            <form method="GET" class="d-flex align-items-center gap-2">
+                <label class="form-label mb-0">Status:</label>
+                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                    <?php 
+                        $statuses = ['All','Pending','Processing','Shipped','Delivered','Cancelled'];
+                        foreach($statuses as $s):
+                    ?>
+                        <option value="<?php echo $s; ?>" <?php echo ($status_filter === $s || ($status_filter==='' && $s==='All')) ? 'selected' : ''; ?>>
+                            <?php echo $s; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <noscript><button class="btn btn-sm btn-primary">Filter</button></noscript>
+            </form>
         </div>
 
         <div class="card shadow-sm">
