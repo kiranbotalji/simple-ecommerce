@@ -27,12 +27,12 @@ Lightweight storefront and admin built with core PHP, MySQLi, and Bootstrap 5. N
 - No caching layer; reads fresh data on each request.
 
 ## Screenshots
-- `docs/screenshots/home.png`
-- `docs/screenshots/product.png`
-- `docs/screenshots/Cart.png`
-- `docs/screenshots/admin_dashboard.png`
-- `docs/screenshots/manage-categories.png`
-- `docs/screenshots/manage-products.png`
+![Home](docs/screenshots/home.png)
+![Product](docs/screenshots/product.png)
+![Cart](docs/screenshots/Cart.png)
+![Admin Dashboard](docs/screenshots/admin_dashboard.png)
+![Manage Categories](docs/screenshots/manage-categories.png)
+![Manage Products](docs/screenshots/manage-products.png)
 
 ## Demo
 - `docs/demo.gif`
